@@ -72,6 +72,14 @@ public class MovePlayer : MonoBehaviour
             rigidBody.velocity = Vector3.zero;
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Inspector"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
 
 
